@@ -14,12 +14,14 @@ interface Todo {
 }
 
 // create add new todo Function
-const addNewTodo = (event:Event) =>{
-    // set preventDefault method
-    event.preventDefault()
+const addNewTodo = (event: Event) => {
+  // set preventDefault method
+  event.preventDefault();
 
-// Creating an object that conforms to the Todo interface
-    const todoObj : Todo {
-
-    }
-}
+  // Creating an object that conforms to the Todo interface
+  const todoObj: Todo = {
+    id: crypto.randomUUID(),
+    title: todoInput.value,
+    isComplete: false,
+  };
+};
