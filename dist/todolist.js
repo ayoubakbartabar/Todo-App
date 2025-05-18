@@ -44,12 +44,13 @@ const showError = (message) => {
 };
 // create addTodoToDom function
 const addTodoToDom = (todo) => {
-    todoList.insertAdjacentHTML("beforeend", ` <li>
+    todoList.insertAdjacentHTML("beforeend", ` <li onclick="removeTodo('${todo.id}')">
           ${todo.title}<span class="icon"
             ><i class="fas fa-trash"></i
           ></span>
         </li>`);
 };
+//  create remove 
 // create set todo to local storage function
 const setTodoInLocal = () => {
     // set todo at local storage

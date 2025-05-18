@@ -14,7 +14,7 @@ interface Todo {
 }
 
 // create todos array and ....
-const todos: Todo[] = JSON.parse(localStorage.getItem("todos") || "[]");
+let todos: Todo[] = JSON.parse(localStorage.getItem("todos") || "[]");
 
 // create add new todo Function
 const addNewTodo = (event: Event) => {
@@ -62,14 +62,17 @@ const showError = (message: string) => {
 const addTodoToDom = (todo: Todo) => {
   todoList.insertAdjacentHTML(
     "beforeend",
-    ` <li>
+    ` <li onclick="removeTodoHandler('${todo.id}')">
           ${todo.title}<span class="icon"
             ><i class="fas fa-trash"></i
           ></span>
         </li>`
   );
 };
+//  create remove todo handler 
+const removeTodoHandler = (todoID:string) =>{
 
+}
 // create set todo to local storage function
 const setTodoInLocal = () => {
   // set todo at local storage
