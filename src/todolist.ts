@@ -34,9 +34,12 @@ const addTodoToDom = (todo: Todo) => {
   todoList.insertAdjacentHTML(
     "beforeend",
     ` <li>
-          Todo 1<span class="icon" onclick="removeTodo('${todo.id}')"
+          ${todo.title}<span class="icon" onclick="removeTodo('${todo.id}')"
             ><i class="fas fa-trash"></i
           ></span>
         </li>`
   );
 };
+
+// set add event listener 
+addTodo.addEventListener('click' , (event) => addNewTodo(event))
