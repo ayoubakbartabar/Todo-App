@@ -57,6 +57,6 @@ const setTodoInLocal = () => {
 // set add event listener
 addTodo.addEventListener("click", (event) => addNewTodo(event));
 window.addEventListener("DOMContentLoaded", () => {
-    // set loop for render the item
-    todos.forEach((todo) => addTodoToDom(todo))
+  // set loop for render the item
+  todos.forEach((todo) => addTodoToDom(todo));
 });
