@@ -13,7 +13,7 @@ const addNewTodo = (event) => {
     event.preventDefault();
     //   set if problem for check the input
     if (!todoInput.value.trim()) {
-        alert("Please Enter Your Todo!!");
+        showError("Please enter your todo!");
         todoInput.focus();
         return;
     }
@@ -31,7 +31,7 @@ const addNewTodo = (event) => {
     todoInput.value = "";
     todoInput.focus();
 };
-// create Alert message
+// create Alert message function
 const showError = (message) => {
     const errorToast = document.querySelector(".error-toast");
     if (!errorToast)
