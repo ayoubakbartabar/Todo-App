@@ -69,10 +69,15 @@ const addTodoToDom = (todo: Todo) => {
         </li>`
   );
 };
+
 //  create remove todo handler
 const removeTodoHandler = (todoID: string) => {
   todos = todos.filter((todo) => todo.id != todoID);
+  setTodoInLocal();
+  todoList.innerHTML = "";
+  todos.forEach((todo) => addTodoToDom(todo));
 };
+
 // create set todo to local storage function
 const setTodoInLocal = () => {
   // set todo at local storage
