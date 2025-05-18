@@ -2,9 +2,9 @@
 const $ = document;
 const todoInput = $.querySelector(".todo-value") as HTMLInputElement;
 const addTodo = $.querySelector(".add-todo") as HTMLButtonElement;
-const todoList = $.querySelector(".todoList") as HTMLUListElement;
 const clearAllTodo = $.querySelector(".clear-todos") as HTMLButtonElement;
 const removeTodo = $.querySelector(".icon") as HTMLButtonElement;
+const todoList = $.querySelector(".todoList") as HTMLUListElement;
 
 // create interface
 interface Todo {
@@ -31,5 +31,12 @@ const addNewTodo = (event: Event) => {
 
 // create addTodoToDom function
 const addTodoToDom = (todo: Todo) => {
-
+  todoList.insertAdjacentHTML(
+    "beforeend",
+    ` <li>
+          Todo 1<span class="icon" onclick="removeTodo('${todo.id}')"
+            ><i class="fas fa-trash"></i
+          ></span>
+        </li>`
+  );
 };
