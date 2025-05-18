@@ -12,3 +12,14 @@ interface Todo {
   title: string;
   isComplete: boolean;
 }
+
+// create add new todo Function
+const addNewTodo = (event:Event) =>{
+    // set preventDefault method
+    event.preventDefault()
+
+// Creating an object that conforms to the Todo interface
+    const todoObj : Todo {
+
+    }
+}
