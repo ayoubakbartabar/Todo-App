@@ -20,7 +20,7 @@ const todos: Todo[] = JSON.parse(localStorage.getItem("todos") || "[]");
 const addNewTodo = (event: Event) => {
   // set preventDefault method
   event.preventDefault();
-
+  console.log("todos");
   // Creating an object that conforms to the Todo interface
   const todoObj: Todo = {
     id: crypto.randomUUID(),
@@ -28,10 +28,11 @@ const addNewTodo = (event: Event) => {
     isComplete: false,
   };
 
-  // call addTodoToDom function
+  // call function
   addTodoToDom(todoObj);
   todos.push(todoObj);
   setTodoInLocal();
+
   // input handler
   todoInput.value = "";
   todoInput.focus();
@@ -42,7 +43,7 @@ const addTodoToDom = (todo: Todo) => {
   todoList.insertAdjacentHTML(
     "beforeend",
     ` <li>
-          ${todo.title}<span class="icon" onclick="removeTodo('${todo.id}')"
+          ${todo.title}<span class="icon"
             ><i class="fas fa-trash"></i
           ></span>
         </li>`
