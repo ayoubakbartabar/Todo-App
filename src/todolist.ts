@@ -27,6 +27,10 @@ const addNewTodo = (event: Event) => {
 
   // call addTodoToDom function
   addTodoToDom(todoObj);
+
+  // input handler
+  todoInput.value = "";
+  todoInput.focus();
 };
 
 // create addTodoToDom function
@@ -41,5 +45,5 @@ const addTodoToDom = (todo: Todo) => {
   );
 };
 
-// set add event listener 
-addTodo.addEventListener('click' , (event) => addNewTodo(event))
+// set add event listener
+addTodo.addEventListener("click", (event) => addNewTodo(event));
