@@ -20,7 +20,14 @@ const todos: Todo[] = JSON.parse(localStorage.getItem("todos") || "[]");
 const addNewTodo = (event: Event) => {
   // set preventDefault method
   event.preventDefault();
-  console.log("todos");
+
+  //   set if problem for check the input
+  if (!todoInput.value.trim()) {
+    alert("Please Enter Your Todo!!");
+    todoInput.focus();
+    return;
+  }
+  
   // Creating an object that conforms to the Todo interface
   const todoObj: Todo = {
     id: crypto.randomUUID(),
