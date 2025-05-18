@@ -6,7 +6,7 @@ const clearAllTodo = $.querySelector(".clear-todos");
 const removeTodo = $.querySelector(".icon");
 const todoList = $.querySelector(".todoList");
 // create todos array and ....
-const todos = JSON.parse(localStorage.getItem("todos") || "[]");
+let todos = JSON.parse(localStorage.getItem("todos") || "[]");
 // create add new todo Function
 const addNewTodo = (event) => {
     // set preventDefault method
@@ -44,13 +44,16 @@ const showError = (message) => {
 };
 // create addTodoToDom function
 const addTodoToDom = (todo) => {
-    todoList.insertAdjacentHTML("beforeend", ` <li onclick="removeTodo('${todo.id}')">
+    todoList.insertAdjacentHTML("beforeend", ` <li onclick="removeTodoHandler('${todo.id}')">
           ${todo.title}<span class="icon"
             ><i class="fas fa-trash"></i
           ></span>
         </li>`);
 };
-//  create remove 
+//  create remove todo handler
+const removeTodoHandler = (todoID) => {
+    todos = todos.filter((todo) => todo.id != todoID);
+};
 // create set todo to local storage function
 const setTodoInLocal = () => {
     // set todo at local storage
