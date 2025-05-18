@@ -13,6 +13,9 @@ interface Todo {
   isComplete: boolean;
 }
 
+// create todos array and .... 
+const todos : Todo[] = JSON.parse(localStorage.getItem('todos') || "[]")
+
 // create add new todo Function
 const addNewTodo = (event: Event) => {
   // set preventDefault method
