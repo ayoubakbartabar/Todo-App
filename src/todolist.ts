@@ -30,7 +30,8 @@ const addNewTodo = (event: Event) => {
 
   // call addTodoToDom function
   addTodoToDom(todoObj);
-
+  todos.push(todoObj);
+  setTodoInLocal();
   // input handler
   todoInput.value = "";
   todoInput.focus();
