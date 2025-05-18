@@ -31,6 +31,17 @@ const addNewTodo = (event) => {
     todoInput.value = "";
     todoInput.focus();
 };
+// create Alert message
+const showError = (message) => {
+    const errorToast = document.querySelector(".error-toast");
+    if (!errorToast)
+        return;
+    errorToast.textContent = message;
+    errorToast.classList.add("show");
+    setTimeout(() => {
+        errorToast.classList.remove("show");
+    }, 3000); // hides after 3 seconds
+};
 // create addTodoToDom function
 const addTodoToDom = (todo) => {
     todoList.insertAdjacentHTML("beforeend", ` <li>

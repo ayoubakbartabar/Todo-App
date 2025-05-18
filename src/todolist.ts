@@ -27,7 +27,7 @@ const addNewTodo = (event: Event) => {
     todoInput.focus();
     return;
   }
-  
+
   // Creating an object that conforms to the Todo interface
   const todoObj: Todo = {
     id: crypto.randomUUID(),
@@ -43,6 +43,19 @@ const addNewTodo = (event: Event) => {
   // input handler
   todoInput.value = "";
   todoInput.focus();
+};
+
+// create Alert message
+const showError = (message: string) => {
+  const errorToast = document.querySelector(".error-toast") as HTMLDivElement;
+  if (!errorToast) return;
+
+  errorToast.textContent = message;
+  errorToast.classList.add("show");
+
+  setTimeout(() => {
+    errorToast.classList.remove("show");
+  }, 3000); // hides after 3 seconds
 };
 
 // create addTodoToDom function
