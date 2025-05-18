@@ -48,5 +48,10 @@ const addTodoToDom = (todo: Todo) => {
   );
 };
 
+// create set todo to local storage function
+const setTodoInLocal = () =>{
+    // set todo at local storage 
+    localStorage.setItem('todos' , JSON.stringify(todos))
+}
 // set add event listener
 addTodo.addEventListener("click", (event) => addNewTodo(event));
