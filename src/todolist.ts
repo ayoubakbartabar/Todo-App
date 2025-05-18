@@ -24,4 +24,12 @@ const addNewTodo = (event: Event) => {
     title: todoInput.value,
     isComplete: false,
   };
+
+  // call addTodoToDom function
+  addTodoToDom(todoObj);
+};
+
+// create addTodoToDom function
+const addTodoToDom = (todo: Todo) => {
+
 };
