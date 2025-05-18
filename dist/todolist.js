@@ -13,7 +13,7 @@ const addNewTodo = (event) => {
     event.preventDefault();
     //   set if problem for check the input
     if (!todoInput.value.trim()) {
-        showError("Please enter your todo!");
+        showError("Please Enter Your Todo!");
         todoInput.focus();
         return;
     }
