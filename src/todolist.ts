@@ -13,8 +13,8 @@ interface Todo {
   isComplete: boolean;
 }
 
-// create todos array and .... 
-const todos : Todo[] = JSON.parse(localStorage.getItem('todos') || "[]")
+// create todos array and ....
+const todos: Todo[] = JSON.parse(localStorage.getItem("todos") || "[]");
 
 // create add new todo Function
 const addNewTodo = (event: Event) => {
@@ -49,9 +49,14 @@ const addTodoToDom = (todo: Todo) => {
 };
 
 // create set todo to local storage function
-const setTodoInLocal = () =>{
-    // set todo at local storage 
-    localStorage.setItem('todos' , JSON.stringify(todos))
-}
+const setTodoInLocal = () => {
+  // set todo at local storage
+  localStorage.setItem("todos", JSON.stringify(todos));
+};
+
 // set add event listener
 addTodo.addEventListener("click", (event) => addNewTodo(event));
+window.addEventListener("DOMContentLoaded", () => {
+    // set loop for render the item
+    todos.forEach((todo) => addTodoToDom(todo))
+});
