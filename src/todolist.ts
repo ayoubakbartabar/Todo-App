@@ -9,7 +9,16 @@ const pendingTask = document.querySelector(".pendingTasks")!;
 const confirmBox = document.getElementById("confirmBox")!;
 const confirmYes = document.getElementById("confirmYes")!;
 const confirmNo = document.getElementById("confirmNo")!;
-
+const motivationBox = document.getElementById(
+  "motivation-box"
+) as HTMLDivElement;
+const closeBtn = document.getElementById(
+  "close-motivation"
+) as HTMLButtonElement;
+const quoteText = document.getElementById("quote-text") as HTMLParagraphElement;
+const quoteAuthor = document.getElementById(
+  "quote-author"
+) as HTMLParagraphElement;
 // create interface
 interface Todo {
   id: string;
