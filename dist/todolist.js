@@ -10,9 +10,9 @@ const confirmBox = document.getElementById("confirmBox");
 const confirmYes = document.getElementById("confirmYes");
 const confirmNo = document.getElementById("confirmNo");
 const motivationBox = document.getElementById("motivation-box");
-const closeBtn = document.getElementById("close-motivation");
 const quoteText = document.getElementById("quote-text");
 const quoteAuthor = document.getElementById("quote-author");
+const closeBtn = document.getElementById("close-motivation");
 // create todos array and ....
 let todos = JSON.parse(localStorage.getItem("todos") || "[]");
 // Motivation Box
