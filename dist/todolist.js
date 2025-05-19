@@ -46,6 +46,14 @@ const showMotivationBox = () => {
     motivationBox.classList.add("slide-in");
     motivationBox.style.display = "block";
 };
+// create hide Motivation Box function
+const hideMotivationBox = () => {
+    motivationBox.classList.remove("slide-in");
+    motivationBox.classList.add("slide-out");
+    motivationBox.addEventListener("animationend", () => {
+        motivationBox.style.display = "none";
+    }, { once: true });
+};
 // create variable for remove todo
 let todoToDeleteId = null;
 let isClearAll = false;
