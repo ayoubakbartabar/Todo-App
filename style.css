@@ -276,3 +276,44 @@ body {
 .motivation-box:hover .close-btn {
   opacity: 1;
 }
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+
+@keyframes slideOutToLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.motivation-box {
+
+  display: none;
+  animation-fill-mode: forwards;
+  transition: opacity 0.3s ease;
+}
+
+.motivation-box.slide-in {
+  display: block;
+  animation: slideInFromLeft 0.5s ease forwards;
+}
+
+=.motivation-box.slide-out {
+  animation: slideOutToLeft 0.5s ease forwards;
+}
