@@ -40,16 +40,12 @@ const quotes = [
         author: "Jim Ryun",
     },
 ];
-if (!isMotivationClosed && motivationBox && quoteText && quoteAuthor) {
-    // select random text in array
-    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-    quoteText.textContent = `"${randomQuote.text}"`;
-    quoteAuthor.textContent = `— ${randomQuote.author}`;
+// create show Motivation Box function
+const showMotivationBox = () => {
+    motivationBox.classList.remove("slide-out");
+    motivationBox.classList.add("slide-in");
     motivationBox.style.display = "block";
-}
-else if (motivationBox) {
-    motivationBox.style.display = "none";
-}
+};
 // create variable for remove todo
 let todoToDeleteId = null;
 let isClearAll = false;

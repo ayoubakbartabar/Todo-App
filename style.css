@@ -314,6 +314,6 @@ body {
   animation: slideInFromLeft 0.5s ease forwards;
 }
 
-=.motivation-box.slide-out {
+.motivation-box.slide-out {
   animation: slideOutToLeft 0.5s ease forwards;
 }
