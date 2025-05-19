@@ -11,20 +11,19 @@
   color: #ffff;
   background: rgb(142, 73, 232);
 }
-
 body {
   width: 100%;
-  height: 100vh;
-  /* overflow: hidden; */
+  min-height: 100vh;
   padding: 10px;
   background: linear-gradient(to bottom, #68eacc 0%, #497be8 100%);
+  overflow-x: hidden;
 }
 
 .wrapper {
   background: #fff;
   max-width: 400px;
   width: 100%;
-  margin: 120px auto;
+  margin: 60px auto; 
   padding: 25px;
   border-radius: 5px;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
@@ -82,8 +81,9 @@ body {
 }
 
 .wrapper .todoList {
-  max-height: 250px;
-  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px; 
 }
 
 .todoList li {
@@ -155,4 +155,67 @@ body {
 
 .error-toast.show {
   right: 20px;
+}
+.custom-alert {
+  position: fixed;
+  top: 20px;
+  right: -300px;     
+  width: 250px;
+  background-color: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: right 0.4s ease;
+  z-index: 9999;
+}
+
+.custom-alert.show {
+  right: 20px;
+}
+
+.custom-alert .buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.custom-alert button {
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#confirmYes {
+  background-color: #e74c3c;
+  color: white;
+}
+
+#confirmNo {
+  background-color: #ccc;
+}
+
+/* transition styles */
+.todo-fade-enter {
+  opacity: 0;
+  transform: translateY(-15px);
+}
+
+.todo-fade-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.4s ease;
+}
+
+.todo-fade-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.todo-fade-exit-active {
+  opacity: 0;
+  transform: translateY(15px);
+  transition: all 0.4s ease;
 }

@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/942/942748.png" type="image/png">
+    <link
+      rel="icon"
+      href="https://cdn-icons-png.flaticon.com/512/942/942748.png"
+      type="image/png"
+    />
     <title>Todo App</title>
     <link
       rel="stylesheet"
@@ -29,6 +33,14 @@
     </div>
     <!-- Error Toast -->
     <div class="error-toast">Please enter a todo!</div>
+
+    <div class="custom-alert" id="confirmBox">
+      <p>Are you sure you want to delete todo?</p>
+      <div class="buttons">
+        <button id="confirmYes">Yes</button>
+        <button id="confirmNo">No</button>
+      </div>
+    </div>
 
     <script src="dist/todolist.js"></script>
   </body>

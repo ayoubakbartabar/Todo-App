@@ -5,8 +5,20 @@ const addTodo = $.querySelector(".add-todo");
 const clearAllTodo = $.querySelector(".clear-todos");
 const removeTodo = $.querySelector(".icon");
 const todoList = $.querySelector(".todoList");
+const pendingTask = document.querySelector(".pendingTasks");
+const confirmBox = document.getElementById("confirmBox");
+const confirmYes = document.getElementById("confirmYes");
+const confirmNo = document.getElementById("confirmNo");
 // create todos array and ....
 let todos = JSON.parse(localStorage.getItem("todos") || "[]");
+// create variable for remove todo
+let todoToDeleteId = null;
+let isClearAll = false;
+// create function for show alert
+const showConfirmBox = (todoID) => {
+    todoToDeleteId = todoID;
+    confirmBox.classList.add("show");
+};
 // create add new todo Function
 const addNewTodo = (event) => {
     // set preventDefault method
@@ -27,9 +39,15 @@ const addNewTodo = (event) => {
     addTodoToDom(todoObj);
     todos.push(todoObj);
     setTodoInLocal();
+    updatePendingTasks();
     // input handler
     todoInput.value = "";
     todoInput.focus();
+};
+// create pending task function
+const updatePendingTasks = () => {
+    const pendingCount = todos.filter((todo) => !todo.isComplete).length;
+    pendingTask.textContent = `${pendingCount}${pendingCount !== 1 ? "" : ""}`;
 };
 // create Alert message function
 const showError = (message) => {
@@ -40,22 +58,29 @@ const showError = (message) => {
     errorToast.classList.add("show");
     setTimeout(() => {
         errorToast.classList.remove("show");
-    }, 3000); // hides after 3 seconds
+    }, 3000);
 };
 // create addTodoToDom function
 const addTodoToDom = (todo) => {
-    todoList.insertAdjacentHTML("beforeend", ` <li onclick="removeTodoHandler('${todo.id}')">
-          ${todo.title}<span class="icon"
-            ><i class="fas fa-trash"></i
-          ></span>
-        </li>`);
-};
-//  create remove todo handler
-const removeTodoHandler = (todoID) => {
-    todos = todos.filter((todo) => todo.id != todoID);
-    setTodoInLocal();
-    todoList.innerHTML = "";
-    todos.forEach((todo) => addTodoToDom(todo));
+    const li = document.createElement("li");
+    li.innerHTML = `
+    ${todo.title}
+    <span class="icon"><i class="fas fa-trash"></i></span>
+  `;
+    li.dataset.id = todo.id;
+    li.classList.add("todo-fade-enter");
+    todoList.appendChild(li);
+    requestAnimationFrame(() => {
+        li.classList.add("todo-fade-enter-active");
+        li.classList.remove("todo-fade-enter");
+    });
+    const icon = li.querySelector(".icon");
+    if (icon) {
+        icon.addEventListener("click", (e) => {
+            e.stopPropagation();
+            showConfirmBox(todo.id);
+        });
+    }
 };
 // create set todo to local storage function
 const setTodoInLocal = () => {
@@ -67,5 +92,54 @@ addTodo.addEventListener("click", (event) => addNewTodo(event));
 window.addEventListener("DOMContentLoaded", () => {
     // set loop for render the item
     todos.forEach((todo) => addTodoToDom(todo));
+    updatePendingTasks();
+});
+clearAllTodo.addEventListener("click", () => {
+    if (todos.length === 0)
+        return;
+    isClearAll = true;
+    showConfirmBox("");
+});
+confirmYes.addEventListener("click", () => {
+    if (isClearAll) {
+        const allItems = todoList.querySelectorAll("li");
+        allItems.forEach((li) => li.classList.add("todo-fade-exit"));
+        requestAnimationFrame(() => {
+            allItems.forEach((li) => {
+                li.classList.add("todo-fade-exit-active");
+                li.classList.remove("todo-fade-exit");
+            });
+            setTimeout(() => {
+                allItems.forEach((li) => li.remove());
+                todos = [];
+                setTodoInLocal();
+                updatePendingTasks();
+            }, 400);
+        });
+        isClearAll = false;
+    }
+    else if (todoToDeleteId) {
+        const li = document.querySelector(`li[data-id="${todoToDeleteId}"]`);
+        todos = todos.filter((todo) => todo.id !== todoToDeleteId);
+        setTodoInLocal();
+        updatePendingTasks();
+        if (li) {
+            li.classList.add("todo-fade-exit");
+            requestAnimationFrame(() => {
+                li.classList.add("todo-fade-exit-active");
+                li.classList.remove("todo-fade-exit");
+                setTimeout(() => {
+                    li.remove();
+                }, 400);
+            });
+        }
+        todoToDeleteId = null;
+    }
+    confirmBox.classList.remove("show");
+});
+confirmNo.addEventListener("click", () => {
+    todoToDeleteId = null;
+    isClearAll = false;
+    confirmBox.classList.remove("show");
 });
 //# sourceMappingURL=todolist.js.map
