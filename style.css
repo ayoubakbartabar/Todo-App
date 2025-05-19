@@ -256,3 +256,20 @@ body {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
+.motivation-box:hover .close-btn {
+  opacity: 1;
+}
+
+.quote-text {
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.quote-author {
+  font-weight: bold;
+  font-size: 14px;
+  text-align: right;
+  color: #555;
+}
