@@ -1,4 +1,4 @@
-<img src="Web-Template.png" alt="Web Template image">
+<img src="./Web-Template .png" alt="Web Template image">
 
 # To-Do App 📝
 
