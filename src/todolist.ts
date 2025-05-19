@@ -55,6 +55,16 @@ const quotes = [
   },
 ];
 
+if (!isMotivationClosed && motivationBox && quoteText && quoteAuthor) {
+  // select random text in array
+  const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+  quoteText.textContent = `"${randomQuote.text}"`;
+  quoteAuthor.textContent = `— ${randomQuote.author}`;
+
+  motivationBox.style.display = "block";
+} else if (motivationBox) {
+  motivationBox.style.display = "none";
+}
 // create variable for remove todo
 let todoToDeleteId: string | null = null;
 let isClearAll = false;
@@ -210,4 +220,3 @@ confirmNo.addEventListener("click", () => {
   isClearAll = false;
   confirmBox.classList.remove("show");
 });
-
