@@ -157,21 +157,17 @@ todoInput.addEventListener("keydown", (event: KeyboardEvent) => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  // Select a random quote from the quotes array
+  // get random quotes and ste styles
   const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
-
-  // Set the quote text and author in the motivation box
   quoteText.textContent = `"${randomQuote.text}"`;
   quoteAuthor.textContent = `— ${randomQuote.author}`;
-
-  // Remove exit animation class in case it was previously applied
   motivationBox.classList.remove("slide-out");
-
-  // Add entrance animation class to show the box with animation
   motivationBox.classList.add("slide-in");
-
-  // Make sure the motivation box is visible
   motivationBox.style.display = "block";
+  
+  // rerender the item in localstorage
+  todos.forEach((todo) => addTodoToDom(todo));
+  updatePendingTasks();
 });
 
 clearAllTodo.addEventListener("click", () => {
