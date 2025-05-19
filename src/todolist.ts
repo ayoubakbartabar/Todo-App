@@ -220,3 +220,8 @@ confirmNo.addEventListener("click", () => {
   isClearAll = false;
   confirmBox.classList.remove("show");
 });
+
+closeBtn.addEventListener("click", () => {
+  motivationBox.style.display = "none";
+  localStorage.setItem("motivationClosed", "true");
+});
