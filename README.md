@@ -18,6 +18,17 @@ Whether you want to jot down quick notes or manage complex projects, this app em
 
 ---
 
+## ⚙️ Features
+
+- **Add, update, and remove tasks** seamlessly with smooth animations.  
+- **Persistent storage** using `localStorage` to keep your tasks safe across sessions.  
+- **Task completion status** to mark tasks done and track your progress.  
+- **Clear all tasks** functionality with confirmation prompts for safety.  
+- **Error handling and validation** to make sure your input is always valid.  
+- **Responsive UI** that adapts perfectly to any screen size.
+
+---
+
 ## 🤝 Contribution & Contact
 
 Feedback, suggestions, and contributions are always welcome.  
