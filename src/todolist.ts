@@ -29,6 +29,32 @@ interface Todo {
 // create todos array and ....
 let todos: Todo[] = JSON.parse(localStorage.getItem("todos") || "[]");
 
+// Motivation Box
+// Motivation Box Array
+const isMotivationClosed = localStorage.getItem("motivationClosed");
+const quotes = [
+  {
+    text: "Discipline is the bridge between goals and accomplishment.",
+    author: "Jim Rohn",
+  },
+  {
+    text: "The secret of getting ahead is getting started.",
+    author: "Mark Twain",
+  },
+  {
+    text: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+    author: "Winston Churchill",
+  },
+  {
+    text: "Don't watch the clock; do what it does. Keep going.",
+    author: "Sam Levenson",
+  },
+  {
+    text: "Motivation is what gets you started. Habit is what keeps you going.",
+    author: "Jim Ryun",
+  },
+];
+
 // create variable for remove todo
 let todoToDeleteId: string | null = null;
 let isClearAll = false;
@@ -185,27 +211,3 @@ confirmNo.addEventListener("click", () => {
   confirmBox.classList.remove("show");
 });
 
-// Motivation Box
-// Motivation Box Array
-const quotes = [
-  {
-    text: "Discipline is the bridge between goals and accomplishment.",
-    author: "Jim Rohn",
-  },
-  {
-    text: "The secret of getting ahead is getting started.",
-    author: "Mark Twain",
-  },
-  {
-    text: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
-    author: "Winston Churchill",
-  },
-  {
-    text: "Don't watch the clock; do what it does. Keep going.",
-    author: "Sam Levenson",
-  },
-  {
-    text: "Motivation is what gets you started. Habit is what keeps you going.",
-    author: "Jim Ryun",
-  },
-];
