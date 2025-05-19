@@ -54,6 +54,13 @@ const hideMotivationBox = () => {
         motivationBox.style.display = "none";
     }, { once: true });
 };
+// set if problem
+if (!isMotivationClosed) {
+    showMotivationBox();
+}
+else {
+    motivationBox.style.display = "none";
+}
 // create variable for remove todo
 let todoToDeleteId = null;
 let isClearAll = false;
@@ -186,7 +193,7 @@ confirmNo.addEventListener("click", () => {
     confirmBox.classList.remove("show");
 });
 closeBtn.addEventListener("click", () => {
-    motivationBox.style.display = "none";
+    hideMotivationBox();
     localStorage.setItem("motivationClosed", "true");
 });
 //# sourceMappingURL=todolist.js.map
