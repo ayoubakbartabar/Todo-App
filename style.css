@@ -225,40 +225,24 @@ body {
 /* Motivation Box */
 .motivation-box {
   position: fixed;
-  top: 50%;
-  left: 10px;
-  transform: translateY(-50%);
-  width: 280px;
-  background: #f9f9f9;
-  border-left: 4px solid #4CAF50;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px 20px 20px 15px;
+  top: 80px;
+  left: 20px;
+  width: 300px;
+  padding: 20px 20px 40px 20px;
+  background-color: #f9f9f9;
+  border-left: 5px solid #4CAF50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: #333;
-  border-radius: 6px;
-  transition: opacity 0.3s ease;
+  border-radius: 8px;
   z-index: 1000;
+  cursor: default;
+  display: none;
+  transition: box-shadow 0.3s ease;
 }
 
 .motivation-box:hover {
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.close-btn {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: transparent;
-  border: none;
-  font-size: 20px;
-  color: #888;
-  cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.motivation-box:hover .close-btn {
-  opacity: 1;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
 }
 
 .quote-text {
@@ -268,8 +252,27 @@ body {
 }
 
 .quote-author {
+  text-align: right;
   font-weight: bold;
   font-size: 14px;
-  text-align: right;
   color: #555;
+}
+
+.close-btn {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  line-height: 22px;
+  cursor: pointer;
+  color: #888;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  user-select: none;
+}
+
+.motivation-box:hover .close-btn {
+  opacity: 1;
 }
