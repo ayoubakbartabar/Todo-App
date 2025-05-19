@@ -11,6 +11,7 @@
   color: #ffff;
   background: rgb(142, 73, 232);
 }
+
 body {
   width: 100%;
   min-height: 100vh;
@@ -23,7 +24,7 @@ body {
   background: #fff;
   max-width: 400px;
   width: 100%;
-  margin: 60px auto; 
+  margin: 60px auto;
   padding: 25px;
   border-radius: 5px;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
@@ -83,7 +84,7 @@ body {
 .wrapper .todoList {
   display: flex;
   flex-direction: column;
-  gap: 8px; 
+  gap: 8px;
 }
 
 .todoList li {
@@ -156,10 +157,11 @@ body {
 .error-toast.show {
   right: 20px;
 }
+
 .custom-alert {
   position: fixed;
   top: 20px;
-  right: -300px;     
+  right: -300px;
   width: 250px;
   background-color: #fff;
   color: #333;
@@ -218,4 +220,22 @@ body {
   opacity: 0;
   transform: translateY(15px);
   transition: all 0.4s ease;
+}
+
+/* Motivation Box */
+.motivation-box {
+  position: fixed;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  width: 280px;
+  background: #f9f9f9;
+  border-left: 4px solid #4CAF50;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px 20px 20px 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  border-radius: 6px;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
 }
