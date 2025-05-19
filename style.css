@@ -317,3 +317,24 @@ body {
 .motivation-box.slide-out {
   animation: slideOutToLeft 0.5s ease forwards;
 }
+
+/* initial state (hidden) */
+#motivation-box {
+  display: none;
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: all 0.5s ease;
+}
+
+/* enter animation */
+#motivation-box.slide-in {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* exit animation */
+#motivation-box.slide-out {
+  opacity: 0;
+  transform: translateX(-100%);
+}
