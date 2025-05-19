@@ -9,8 +9,47 @@ const pendingTask = document.querySelector(".pendingTasks");
 const confirmBox = document.getElementById("confirmBox");
 const confirmYes = document.getElementById("confirmYes");
 const confirmNo = document.getElementById("confirmNo");
+const motivationBox = document.getElementById("motivation-box");
+const closeBtn = document.getElementById("close-motivation");
+const quoteText = document.getElementById("quote-text");
+const quoteAuthor = document.getElementById("quote-author");
 // create todos array and ....
 let todos = JSON.parse(localStorage.getItem("todos") || "[]");
+// Motivation Box
+// Motivation Box Array
+const isMotivationClosed = localStorage.getItem("motivationClosed");
+const quotes = [
+    {
+        text: "Discipline is the bridge between goals and accomplishment.",
+        author: "Jim Rohn",
+    },
+    {
+        text: "The secret of getting ahead is getting started.",
+        author: "Mark Twain",
+    },
+    {
+        text: "Success is not final, failure is not fatal: It is the courage to continue that counts.",
+        author: "Winston Churchill",
+    },
+    {
+        text: "Don't watch the clock; do what it does. Keep going.",
+        author: "Sam Levenson",
+    },
+    {
+        text: "Motivation is what gets you started. Habit is what keeps you going.",
+        author: "Jim Ryun",
+    },
+];
+if (!isMotivationClosed && motivationBox && quoteText && quoteAuthor) {
+    // select random text in array
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    quoteText.textContent = `"${randomQuote.text}"`;
+    quoteAuthor.textContent = `— ${randomQuote.author}`;
+    motivationBox.style.display = "block";
+}
+else if (motivationBox) {
+    motivationBox.style.display = "none";
+}
 // create variable for remove todo
 let todoToDeleteId = null;
 let isClearAll = false;
@@ -141,5 +180,9 @@ confirmNo.addEventListener("click", () => {
     todoToDeleteId = null;
     isClearAll = false;
     confirmBox.classList.remove("show");
+});
+closeBtn.addEventListener("click", () => {
+    motivationBox.style.display = "none";
+    localStorage.setItem("motivationClosed", "true");
 });
 //# sourceMappingURL=todolist.js.map
