@@ -13,7 +13,8 @@
 }
 
 body {
-  width: 100%;
+  margin: 0 auto;
+  max-width: 2400px;
   min-height: 100vh;
   padding: 10px;
   background: linear-gradient(to bottom, #68eacc 0%, #497be8 100%);
