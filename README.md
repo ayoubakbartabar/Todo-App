@@ -17,3 +17,11 @@ Whether you want to jot down quick notes or manage complex projects, this app em
 </p>
 
 ---
+
+## 🤝 Contribution & Contact
+
+Feedback, suggestions, and contributions are always welcome.  
+Feel free to reach out if you’re interested in collaborating or have any questions.
+
+---
+
