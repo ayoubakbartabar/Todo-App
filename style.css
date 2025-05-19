@@ -339,3 +339,25 @@ body {
   opacity: 0;
   transform: translateX(-100%);
 }
+
+@media (max-width: 1165px) {
+  .motivation-box {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 400px;
+    margin: 20px auto 0 auto;
+    border-left: none;
+    border-top: 5px solid #4CAF50;
+    border-radius: 8px;
+  }
+
+  #motivation-box.slide-in {
+    transform: translateX(0);
+  }
+
+  #motivation-box.slide-out {
+    transform: translateX(-100%);
+  }
+}
