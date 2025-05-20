@@ -17,7 +17,7 @@ Whether you’re a productivity geek or just want a better way to manage your da
 
 ✨ Experience the app in real-time and enjoy its clean, smart design:
 
-[🔗 zentra-app.netlify.app](https://zentra-app.netlify.app)
+[🔗Live Demo](https://zentra-app.netlify.app)
 
 ---
 ## 🚀 Technologies Used
