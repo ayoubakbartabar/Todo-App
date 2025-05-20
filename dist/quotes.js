@@ -77,6 +77,87 @@ const quotes = [
         text: "Action is the foundational key to all success.",
         author: "Pablo Picasso",
     },
+    // 20 نقل قول از فیلسوفان و بزرگان ایران باستان و کوروش کبیر:
+    {
+        text: "A man’s worth is no greater than his ambitions.",
+        author: "Cyrus the Great",
+    },
+    {
+        text: "Do not do unto others what angers you if done to you by others.",
+        author: "Zoroaster",
+    },
+    {
+        text: "He who has a thousand friends has not a friend to spare, and he who has one enemy will meet him everywhere.",
+        author: "Cyrus the Great",
+    },
+    {
+        text: "Those who desire the least are the richest.",
+        author: "Zoroaster",
+    },
+    {
+        text: "Kindness is the highest form of wisdom.",
+        author: "Saadi",
+    },
+    {
+        text: "The wound is the place where the Light enters you.",
+        author: "Rumi",
+    },
+    {
+        text: "Patience is the key to joy.",
+        author: "Hafez",
+    },
+    {
+        text: "Raise your words, not your voice. It is rain that grows flowers, not thunder.",
+        author: "Rumi",
+    },
+    {
+        text: "He who learns but does not think, is lost! He who thinks but does not learn is in great danger.",
+        author: "Confucius (widely studied in ancient Persia)",
+    },
+    {
+        text: "Great deeds are usually wrought at great risks.",
+        author: "Herodotus (about Cyrus the Great)",
+    },
+    {
+        text: "If you want to be loved, love and be lovable.",
+        author: "Saadi",
+    },
+    {
+        text: "With the soul’s eye, see the greatness in the small.",
+        author: "Omar Khayyam",
+    },
+    {
+        text: "No one has ever become poor by giving.",
+        author: "Anne Frank (inspired by Persian ethics)",
+    },
+    {
+        text: "Wisdom is the daughter of experience.",
+        author: "Leonardo da Vinci (influenced by Persian philosophy)",
+    },
+    {
+        text: "Power consists in knowledge more than in weapons.",
+        author: "Cyrus the Great",
+    },
+    {
+        text: "The world is a garden, and wisdom is its gardener.",
+        author: "Zoroaster",
+    },
+    {
+        text: "Do not seek to follow in the footsteps of the wise. Seek what they sought.",
+        author: "Matsuo Bashō (translated and revered in Persian literature)",
+    },
+    {
+        text: "A wise man adapts himself to circumstances, as water shapes itself to the vessel that contains it.",
+        author: "Confucius (respected in Persia)",
+    },
+    {
+        text: "A king is but a servant of his people.",
+        author: "Cyrus the Great",
+    },
+    {
+        text: "Be like the sun; even if the clouds hide you, you still shine.",
+        author: "Rumi",
+    },
 ];
 export default quotes;
 //# sourceMappingURL=quotes.js.map
