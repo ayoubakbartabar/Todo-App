@@ -16,6 +16,7 @@ const motivationBox = document.getElementById("motivation-box")!;
 const quoteText = document.getElementById("quote-text")!;
 const quoteAuthor = document.getElementById("quote-author")!;
 const closeBtn = document.getElementById("close-motivation")!;
+const toast = document.querySelector(".toast") as HTMLDivElement; 
 
 // create interface
 interface Todo {
