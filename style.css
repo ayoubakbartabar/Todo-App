@@ -100,21 +100,6 @@ body {
   word-wrap: break-word;
 }
 
-.todoList li .icon {
-  position: absolute;
-  right: -45px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: #e74c3c;
-  width: 45px;
-  text-align: center;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 0 3px 3px 0;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
 .todoList li:hover .icon {
   right: 0px;
 }
@@ -142,6 +127,62 @@ body {
 }
 
 /* Success Toast */
+.todoList li {
+  position: relative;
+  padding-right: 110px;
+  list-style: none;
+  margin-bottom: 8px;
+  background: #f2f2f2;
+  border-radius: 3px;
+  padding: 10px 15px;
+  cursor: default;
+  overflow: hidden;
+  word-wrap: break-word;
+}
+
+.actions {
+  position: absolute;
+  right: -100px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  transition: right 0.3s ease;
+}
+
+.todoList li:hover .actions {
+  right: 1px;
+}
+
+.actions .check,
+.actions .icon {
+  width: 45px;
+  height: 35px;
+  background: #4caf50;
+  color: #fff;
+  border-radius: 3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 18px;
+}
+
+.actions .icon {
+  background: #e74c3c;
+}
+
+.todoList li:hover .actions .check {
+  background: #388e3c;
+}
+
+.todoList li:hover .actions .icon {
+  background: #c0392b;
+}
+
+
 .toast {
   position: fixed;
   bottom: 20px;
@@ -169,6 +210,7 @@ body {
 .success-toast {
   background-color: #4caf50;
 }
+
 .completed {
   text-decoration: line-through;
   opacity: 0.6;

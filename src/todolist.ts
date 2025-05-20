@@ -183,6 +183,7 @@ clearAllTodo.addEventListener("click", () => {
   isClearAll = true;
   showConfirmBox("");
 });
+
 confirmYes.addEventListener("click", () => {
   if (isClearAll) {
     // If the user confirmed clearing all todos
