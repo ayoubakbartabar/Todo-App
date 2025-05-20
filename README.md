@@ -20,6 +20,7 @@ Whether you’re a productivity geek or just want a better way to manage your da
 [🔗Live Demo](https://zentra-app.netlify.app)
 
 ---
+
 ## 🚀 Technologies Used
 
 <p align="left">
@@ -42,11 +43,20 @@ Whether you’re a productivity geek or just want a better way to manage your da
 
 ---
 
-## 🎯 Why This App?
+## 💡 Why Zentra Stands Out?
 
-In today’s fast-paced world, staying organized is the key to success. This To-Do App combines simplicity with powerful features to help you focus on what matters most — your tasks.
+🧘‍♂️ Minimalist Design — A distraction-free interface for ultimate focus
+
+⚡ Instant Task Management — Add, complete, or delete tasks with ease
+
+🧮 Live Task Counter — Always know how many tasks are left
+
+🧹 One-Click Clear — Remove all tasks instantly (with confirmation)
+
+📱 Fully Responsive — Seamless experience on desktop, tablet, or mobile
 
 ---
+
 
 ## 🤝 Contribution & Contact
 
