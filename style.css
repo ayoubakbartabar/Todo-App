@@ -185,17 +185,18 @@ body {
 
 .toast {
   position: fixed;
-  bottom: 20px;
-  left: 20px;
-  background-color: #333;
-  color: #fff;
-  padding: 10px 15px;
-  border-radius: 5px;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #e74c3c;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
   opacity: 0;
   pointer-events: none;
-  transition: all 0.3s ease-in-out;
-  z-index: 1000;
-  font-size: 14px;
+  transition: all 0.3s ease;
+  z-index: 999;
 }
 
 .toast.show {
@@ -203,12 +204,12 @@ body {
   pointer-events: auto;
 }
 
-.error-toast {
-  background-color: #f44336;
+.toast.success {
+  background-color: #2ecc71;
 }
 
-.success-toast {
-  background-color: #4caf50;
+.error-toast {
+  background-color: #f44336;
 }
 
 .completed {
