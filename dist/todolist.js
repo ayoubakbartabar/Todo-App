@@ -102,14 +102,16 @@ const addTodoToDom = (todo) => {
     const li = document.createElement("li");
     // Set the inner HTML of the <li> with the todo title and action buttons
     li.innerHTML = `
-    <span class="todo-text ${todo.isComplete ? "completed" : ""}">
-      ${todo.title}
+  <span class="todo-text ${todo.isComplete ? "completed" : ""}">
+    ${todo.title}
+  </span>
+  <div class="actions">
+    <span class="check">
+      <i class="fas ${todo.isComplete ? "fa-times" : "fa-check"}"></i>
     </span>
-    <div class="actions">
-      <span class="check"><i class="fas fa-check"></i></span>
-      <span class="icon"><i class="fas fa-trash"></i></span>
-    </div>
-  `;
+    <span class="icon"><i class="fas fa-trash"></i></span>
+  </div>
+`;
     // Set a data attribute with the todo's ID for reference
     li.dataset.id = todo.id;
     // Add fade-in animation class and append to the list
