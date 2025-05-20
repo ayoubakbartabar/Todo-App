@@ -57,6 +57,12 @@ Whether you’re a productivity geek or just want a better way to manage your da
 
 ---
 
+## 💬 Why Zentra?
+
+Because true productivity isn’t about doing more — it’s about doing what matters with clarity.  
+Zentra helps you stay focused, organized, and fully in control of your time — no distractions, no clutter.
+
+---
 
 ## 🤝 Contribution & Contact
 
