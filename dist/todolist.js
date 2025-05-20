@@ -54,7 +54,7 @@ const addNewTodo = (event) => {
     event.preventDefault();
     //   set if problem for check the input
     if (!todoInput.value.trim()) {
-        showError("Please Enter Your Todo!");
+        showToast("Please Enter Your Todo!");
         todoInput.focus();
         return;
     }
@@ -79,14 +79,14 @@ const updatePendingTasks = () => {
     pendingTask.textContent = `${pendingCount}${pendingCount !== 1 ? "" : ""}`;
 };
 // create Alert message function
-const showError = (message) => {
-    const errorToast = document.querySelector(".error-toast");
-    if (!errorToast)
+const showToast = (message, type = "error") => {
+    const toast = document.querySelector(`.${type}-toast`);
+    if (!toast)
         return;
-    errorToast.textContent = message;
-    errorToast.classList.add("show");
+    toast.textContent = message;
+    toast.classList.add("show");
     setTimeout(() => {
-        errorToast.classList.remove("show");
+        toast.classList.remove("show");
     }, 3000);
 };
 // create addTodoToDom function
