@@ -77,7 +77,6 @@ const quotes = [
         text: "Action is the foundational key to all success.",
         author: "Pablo Picasso",
     },
-    // 20 نقل قول از فیلسوفان و بزرگان ایران باستان و کوروش کبیر:
     {
         text: "A man’s worth is no greater than his ambitions.",
         author: "Cyrus the Great",
@@ -144,11 +143,11 @@ const quotes = [
     },
     {
         text: "Do not seek to follow in the footsteps of the wise. Seek what they sought.",
-        author: "Matsuo Bashō (translated and revered in Persian literature)",
+        author: "Matsuo Bashō ",
     },
     {
         text: "A wise man adapts himself to circumstances, as water shapes itself to the vessel that contains it.",
-        author: "Confucius (respected in Persia)",
+        author: "Confucius ",
     },
     {
         text: "A king is but a servant of his people.",
