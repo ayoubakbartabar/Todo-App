@@ -123,9 +123,13 @@ const showToast = (
 const addTodoToDom = (todo: Todo): void => {
   const li = document.createElement("li");
   li.innerHTML = `
-    ${todo.title}
+  <span class="todo-text">${todo.title}</span>
+  <div class="actions">
+    <span class="check"><i class="fas fa-check"></i></span>
     <span class="icon"><i class="fas fa-trash"></i></span>
-  `;
+  </div>
+`;
+
   li.dataset.id = todo.id;
 
   li.classList.add("todo-fade-enter");
