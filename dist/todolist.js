@@ -146,39 +146,53 @@ clearAllTodo.addEventListener("click", () => {
 });
 confirmYes.addEventListener("click", () => {
     if (isClearAll) {
+        // If the user confirmed clearing all todos
+        // Select all todo list items and add the exit animation class
         const allItems = todoList.querySelectorAll("li");
         allItems.forEach((li) => li.classList.add("todo-fade-exit"));
+        // Use requestAnimationFrame to trigger CSS animation transitions
         requestAnimationFrame(() => {
             allItems.forEach((li) => {
-                li.classList.add("todo-fade-exit-active");
-                li.classList.remove("todo-fade-exit");
+                li.classList.add("todo-fade-exit-active"); // Activate exit animation
+                li.classList.remove("todo-fade-exit"); // Remove initial exit class to trigger transition
             });
+            // After the animation duration (400ms), remove all todo items from DOM and clear todos array
             setTimeout(() => {
-                allItems.forEach((li) => li.remove());
-                todos = [];
-                setTodoInLocal();
-                updatePendingTasks();
+                allItems.forEach((li) => li.remove()); // Remove all <li> elements from DOM
+                todos = []; // Clear the todos array
+                setTodoInLocal(); // Update localStorage to reflect the empty todos
+                updatePendingTasks(); // Update the pending tasks counter
+                showToast("All todos cleared!", "success"); // Show success toast notification
             }, 400);
         });
+        // Reset the flag indicating clear-all action
         isClearAll = false;
     }
     else if (todoToDeleteId) {
+        // If the user confirmed deleting a single todo by ID
+        // Select the <li> element corresponding to the todo ID
         const li = document.querySelector(`li[data-id="${todoToDeleteId}"]`);
+        // Remove the todo from the todos array by filtering it out
         todos = todos.filter((todo) => todo.id !== todoToDeleteId);
-        setTodoInLocal();
-        updatePendingTasks();
+        setTodoInLocal(); // Update localStorage with the modified todos
+        updatePendingTasks(); // Update the pending tasks counter
+        showToast("Todo removed successfully!", "success"); // Show success toast notification
         if (li) {
-            li.classList.add("todo-fade-exit");
+            // If the list item exists in DOM, animate its removal
+            li.classList.add("todo-fade-exit"); // Start exit animation
             requestAnimationFrame(() => {
-                li.classList.add("todo-fade-exit-active");
-                li.classList.remove("todo-fade-exit");
+                li.classList.add("todo-fade-exit-active"); // Activate exit animation
+                li.classList.remove("todo-fade-exit"); // Remove initial exit class to trigger transition
+                // After animation duration, remove the <li> from DOM
                 setTimeout(() => {
                     li.remove();
                 }, 400);
             });
         }
+        // Reset the ID of the todo to delete
         todoToDeleteId = null;
     }
+    // Finally, hide the confirmation dialog
     confirmBox.classList.remove("show");
 });
 confirmNo.addEventListener("click", () => {
