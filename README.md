@@ -1,13 +1,11 @@
 <img src="./web-template.png" alt="Web Template image">
 
-# To-Do App 📝  
-**Task Management, but Smarter!**
+# 🚀 Zentra — Task Mastery Redefined
 
-Welcome to your productivity game-changer — a sleek and efficient app designed to elevate your daily workflow.  
-This app isn’t just about adding tasks — it helps you **complete them faster and with precision**.
+**Zentra isn’t just another To-Do app — it’s your minimalist partner in mastering daily focus, clarity, and execution.**  
+Whether you’re a productivity geek or just want a better way to manage your day, Zentra brings elegance and purpose to your task flow.
 
-With a clean and user-friendly interface, it creates a distraction-free environment to keep you focused.  
-If you want to take full control of your day and handle your tasks with calm and order, this app is exactly what you need.
+### 🎯 Less clutter. More action. Total control.
 
 - **Clean and intuitive interface** that keeps distractions away
 - **Seamless user experience** designed for maximum focus
