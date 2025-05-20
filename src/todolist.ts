@@ -128,61 +128,83 @@ const showToast = (
 
 // create addTodoToDom function
 const addTodoToDom = (todo: Todo): void => {
-  // Create a new <li> element for the todo item
   const li = document.createElement("li");
 
-  // Set the inner HTML of the <li> with the todo title and action buttons
+  // Set inner HTML of the todo item with title and action buttons
   li.innerHTML = `
-  <span class="todo-text ${todo.isComplete ? "completed" : ""}">
-    ${todo.title}
-  </span>
-  <div class="actions">
-    <span class="check">
-      <i class="fas ${todo.isComplete ? "fa-times" : "fa-check"}"></i>
+    <span class="todo-text ${todo.isComplete ? "completed" : ""}">
+      ${todo.title}
     </span>
-    <span class="icon"><i class="fas fa-trash"></i></span>
-  </div>
-`;
+    <div class="actions">
+      <span class="check">
+        <i class="fas ${todo.isComplete ? "fa-times" : "fa-check"}"></i>
+      </span>
+      <span class="icon"><i class="fas fa-trash"></i></span>
+    </div>
+  `;
 
-  // Set a data attribute with the todo's ID for reference
+  // Assign the todo ID to data attribute for easy reference
   li.dataset.id = todo.id;
 
-  // Add fade-in animation class and append to the list
+  // Add fade-in animation class and append the item to the list
   li.classList.add("todo-fade-enter");
   todoList.appendChild(li);
 
-  // Trigger CSS transition animation
+  // Trigger CSS transition for fade-in effect
   requestAnimationFrame(() => {
     li.classList.add("todo-fade-enter-active");
     li.classList.remove("todo-fade-enter");
   });
 
-  // Handle delete button click
+  // Handle delete button click: show confirmation dialog
   const icon = li.querySelector(".icon");
   if (icon) {
     icon.addEventListener("click", (e: MouseEvent) => {
-      e.stopPropagation(); // Prevent bubbling
-      showConfirmBox(todo.id); // Show confirmation dialog
+      e.stopPropagation(); // Prevent event bubbling
+      showConfirmBox(todo.id);
     });
   }
 
-  // Handle complete/incomplete toggle on check button
+  // Handle complete/incomplete toggle on check button click
   const check = li.querySelector(".check");
   if (check) {
     check.addEventListener("click", () => {
-      todo.isComplete = !todo.isComplete; // Toggle complete state
+      // Toggle the completion state
+      todo.isComplete = !todo.isComplete;
+
+      // Select the text element and icon element inside check button
       const textEl = li.querySelector(".todo-text");
+      const iconEl = check.querySelector("i");
+
+      // Toggle the "completed" class on the todo text for strikethrough effect
       if (textEl) {
-        textEl.classList.toggle("completed"); // Add or remove strikethrough style
+        textEl.classList.toggle("completed");
       }
-      setTodoInLocal(); // Save updated todos to localStorage
-      updatePendingTasks(); // Update the counter
+
+      // Update the icon based on completion status
+      if (iconEl) {
+        if (todo.isComplete) {
+          iconEl.classList.remove("fa-check");
+          iconEl.classList.add("fa-times");
+        } else {
+          iconEl.classList.remove("fa-times");
+          iconEl.classList.add("fa-check");
+        }
+      }
+
+      // Save the updated todos array to localStorage
+      setTodoInLocal();
+
+      // Update the count of pending tasks
+      updatePendingTasks();
+
+      // Show success toast notification with appropriate message
       showToast(
         todo.isComplete
           ? "Todo marked as complete!"
           : "Todo marked as incomplete!",
         "success"
-      ); // Show success message
+      );
     });
   }
 };
