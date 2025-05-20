@@ -121,29 +121,59 @@ const showToast = (
 
 // create addTodoToDom function
 const addTodoToDom = (todo: Todo): void => {
+  // Create a new <li> element for the todo item
   const li = document.createElement("li");
-  li.innerHTML = `
-  <span class="todo-text">${todo.title}</span>
-  <div class="actions">
-    <span class="check"><i class="fas fa-check"></i></span>
-    <span class="icon"><i class="fas fa-trash"></i></span>
-  </div>
-`;
 
+  // Set the inner HTML of the <li> with the todo title and action buttons
+  li.innerHTML = `
+    <span class="todo-text ${todo.isComplete ? "completed" : ""}">
+      ${todo.title}
+    </span>
+    <div class="actions">
+      <span class="check"><i class="fas fa-check"></i></span>
+      <span class="icon"><i class="fas fa-trash"></i></span>
+    </div>
+  `;
+
+  // Set a data attribute with the todo's ID for reference
   li.dataset.id = todo.id;
 
+  // Add fade-in animation class and append to the list
   li.classList.add("todo-fade-enter");
   todoList.appendChild(li);
+
+  // Trigger CSS transition animation
   requestAnimationFrame(() => {
     li.classList.add("todo-fade-enter-active");
     li.classList.remove("todo-fade-enter");
   });
 
+  // Handle delete button click
   const icon = li.querySelector(".icon");
   if (icon) {
     icon.addEventListener("click", (e: MouseEvent) => {
-      e.stopPropagation();
-      showConfirmBox(todo.id);
+      e.stopPropagation(); // Prevent bubbling
+      showConfirmBox(todo.id); // Show confirmation dialog
+    });
+  }
+
+  // Handle complete/incomplete toggle on check button
+  const check = li.querySelector(".check");
+  if (check) {
+    check.addEventListener("click", () => {
+      todo.isComplete = !todo.isComplete; // Toggle complete state
+      const textEl = li.querySelector(".todo-text");
+      if (textEl) {
+        textEl.classList.toggle("completed"); // Add or remove strikethrough style
+      }
+      setTodoInLocal(); // Save updated todos to localStorage
+      updatePendingTasks(); // Update the counter
+      showToast(
+        todo.isComplete
+          ? "Todo marked as complete!"
+          : "Todo marked as incomplete!",
+        "success"
+      ); // Show success message
     });
   }
 };
