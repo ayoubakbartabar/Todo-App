@@ -7,12 +7,19 @@ Whether you’re a productivity geek or just want a better way to manage your da
 
 ### 🎯 Less clutter. More action. Total control.
 
-- **Clean and intuitive interface** that keeps distractions away
-- **Seamless user experience** designed for maximum focus
-- **Smart task handling** so you stay organized effortlessly
+- **Minimalist & distraction-free design** that keeps your mind clear and your goals in sight
+- **Flawless user experience** built to help you stay in the zone and execute with precision
+- **Intelligent task management** that keeps everything organized — without the overwhelm
 
 ---
 
+## 🌐 Live Demo
+
+✨ Experience the app in real-time and enjoy its clean, smart design:
+
+[🔗 zentra-app.netlify.app](https://zentra-app.netlify.app)
+
+---
 ## 🚀 Technologies Used
 
 <p align="left">
