@@ -119,19 +119,42 @@ const showError = (message: string): void => {
 // create addTodoToDom function
 const addTodoToDom = (todo: Todo): void => {
   const li = document.createElement("li");
+  li.dataset.id = todo.id;
+  li.classList.add("todo-fade-enter");
+
+  if (todo.isComplete) {
+    li.classList.add("completed");
+  }
+
   li.innerHTML = `
     ${todo.title}
+    <span class="complete-icon"><i class="fas fa-check"></i></span>
     <span class="icon"><i class="fas fa-trash"></i></span>
   `;
-  li.dataset.id = todo.id;
 
-  li.classList.add("todo-fade-enter");
   todoList.appendChild(li);
   requestAnimationFrame(() => {
     li.classList.add("todo-fade-enter-active");
     li.classList.remove("todo-fade-enter");
   });
 
+  // Complete toggle
+  const completeIcon = li.querySelector(".complete-icon");
+  if (completeIcon) {
+    completeIcon.addEventListener("click", (e: MouseEvent) => {
+      e.stopPropagation();
+      todo.isComplete = !todo.isComplete;
+      li.classList.toggle("completed");
+      setTodoInLocal();
+      updatePendingTasks();
+
+      if (todo.isComplete) {
+        showSuccess("Activity Completed!");
+      }
+    });
+  }
+
+  // Delete button
   const icon = li.querySelector(".icon");
   if (icon) {
     icon.addEventListener("click", (e: MouseEvent) => {
@@ -164,7 +187,7 @@ window.addEventListener("DOMContentLoaded", () => {
   motivationBox.classList.remove("slide-out");
   motivationBox.classList.add("slide-in");
   motivationBox.style.display = "block";
-  
+
   // rerender the item in localstorage
   todos.forEach((todo) => addTodoToDom(todo));
   updatePendingTasks();
