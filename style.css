@@ -152,7 +152,7 @@ body {
 }
 
 .todoList li:hover .actions {
-  right: 1px;
+  right: 5px;
 }
 
 .actions .check,
