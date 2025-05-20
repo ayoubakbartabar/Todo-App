@@ -81,14 +81,20 @@ const updatePendingTasks = () => {
 };
 // create Alert message function
 const showToast = (message, type = "error") => {
-    const toast = document.querySelector(`.${type}-toast`);
     if (!toast)
         return;
     toast.textContent = message;
+    toast.classList.remove("success", "error");
     toast.classList.add("show");
+    if (type === "success") {
+        toast.classList.add("success");
+    }
+    else {
+        toast.classList.remove("success");
+    }
     setTimeout(() => {
         toast.classList.remove("show");
-    }, 3000);
+    }, 5000);
 };
 // create addTodoToDom function
 const addTodoToDom = (todo) => {

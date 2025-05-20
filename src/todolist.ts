@@ -16,7 +16,7 @@ const motivationBox = document.getElementById("motivation-box")!;
 const quoteText = document.getElementById("quote-text")!;
 const quoteAuthor = document.getElementById("quote-author")!;
 const closeBtn = document.getElementById("close-motivation")!;
-const toast = document.querySelector(".toast") as HTMLDivElement; 
+const toast = document.querySelector(".toast") as HTMLDivElement;
 
 // create interface
 interface Todo {
@@ -105,19 +105,25 @@ const updatePendingTasks = () => {
 };
 
 // create Alert message function
+
 const showToast = (
   message: string,
   type: "success" | "error" = "error"
 ): void => {
-  const toast = document.querySelector(`.${type}-toast`);
   if (!toast) return;
 
   toast.textContent = message;
+  toast.classList.remove("success", "error");
   toast.classList.add("show");
+  if (type === "success") {
+    toast.classList.add("success");
+  } else {
+    toast.classList.remove("success");
+  }
 
   setTimeout(() => {
     toast.classList.remove("show");
-  }, 3000);
+  }, 5000);
 };
 
 // create addTodoToDom function
